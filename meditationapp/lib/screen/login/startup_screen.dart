@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meditationapp/common/color_extension.dart';
+import 'package:meditationapp/common_widget/round_button.dart';
+import 'package:meditationapp/screen/login/login_screen.dart';
+//meditationapp\lib\screen\login\login_screen.dart
 
 //Página de inicio
 
@@ -15,7 +18,6 @@ class  _StartUpScreenState extends State <StartUpScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
   }
@@ -25,18 +27,49 @@ class  _StartUpScreenState extends State <StartUpScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            "meditationapp/android/assets/img/starup_top.png", 
-            width: double.maxFinite, 
-            fit: BoxFit.fitWidth,
+
+          //Imagen decorativa principal
+          Image.asset( //Imagen principal
+            "assets/img/starup_top.png", 
+            //"assets\img\starup_top.png"
+            width: double.maxFinite, //Maximo de su contenedor padre
+            fit: BoxFit.fitWidth, //Maximo de su contenedor padre
             ),
-            const Spacer(),
+            const Spacer(), //Todo espacio disponible entre elemento
+
+            Text("Somos lo que hacemos",
+                  style: TextStyle( 
+                    color:TColor.primaryText,
+                    fontSize:30, 
+                    fontWeight: FontWeight.w700,
+                    ),
+                  ),
+
+            const SizedBox(height:15),
+
+            Text("Alrededor de mundo se usa la luna para \nla instrospección y la meditación",
+                  textAlign: TextAlign.center,
+                  style: TextStyle( 
+                    color:TColor.secondaryText,
+                    fontSize:16, 
+                    fontWeight: FontWeight.w600,
+                    ),
+                  ),
 
             const Spacer(),
 
+            //BTN-Registrarme morado
+            RoundButton( //BTN de Common wodgets, recordar importar archivo round_button.dart
+              title:"Registrarme",
+              onPressed:(){}
+            ),
+
+            //Texto de Iniciar sesión, dos colores 2 elementos
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("¿Ya tienes una cuenta?",
+                  textAlign: TextAlign.center,
                   style: TextStyle( 
                     color:TColor.secondaryText,
                     fontSize:14, 
@@ -45,11 +78,15 @@ class  _StartUpScreenState extends State <StartUpScreen> {
                   ),
 
                   TextButton(onPressed: (){
+                    context.push(const LoginScreen());
+                  },
 
-                  },child: Text(
-                    "Inicr seción",
+                  //const Spacer(),
+
+                  child: Text(
+                    "Iniciar sesión",
                     style: TextStyle( 
-                    color:TColor.secondaryText,
+                    color:TColor.primary,
                     fontSize:14, 
                     fontWeight: FontWeight.w600,
                     ),
@@ -58,10 +95,7 @@ class  _StartUpScreenState extends State <StartUpScreen> {
                   ),
                 ],
               ),
-
             const Spacer(),
-
-
           ],
       )
     );

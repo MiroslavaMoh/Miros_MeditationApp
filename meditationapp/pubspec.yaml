@@ -59,8 +59,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/img/
-  #   - images/a_dot_ham.jpeg
+    - assets/img/
+    #- meditationapp/android/assets/img
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -73,16 +73,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-   fonts:
-     - family: Trajan Pro
-       fonts:
-         - asset: meditationapp/android/assets/font/HelveticaNeueLight.otf
-         - asset: meditationapp/android/assets/font/HelveticaNeueMedium.otf
-           weight: 600
-         - asset: meditationapp/android/assets/font/HelveticaNeueBold.otf
-           weight: 700
-         - asset: meditationapp/android/assets/font/HelveticaNeueThin.otf
-           weight: 300 
+fonts: 
+  - family: HelveticaNeue  # Declarar nueva familia de fuentes 
+    fonts:
+      - asset: meditationapp/assets/font/HelveticaNeueLight.otf
+      - asset: meditationapp/assets/font/HelveticaNeueMedium.otf
+        weight: 600
+      - asset: meditationapp/assets/font/HelveticaNeueBold.otf
+        weight: 700
+      - asset: meditationapp/assets/font/HelveticaNeueThin.otf
+        weight: 300
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

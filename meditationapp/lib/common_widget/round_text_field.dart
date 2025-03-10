@@ -29,15 +29,15 @@ class RoundTextField extends StatelessWidget {
           keyboardType:keyboardType, //Tipo de daros recibidos
           obscureText:obscureText ?? false, //Tipo Bool para esconder contraseñas, en esta caso esta desactivado
           style: TextStyle(
-            color: TColor.primaryText,
+            color: TColor.primaryText, //Estilos del archivo color_extension.dart
             fontSize: 16
           ),
-          decoration: InputDecoration(
-            contentPadding:const EdgeInsets.symmetric(horizontal: 20),
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: hintText,
-            suffixIcon: right,
+          decoration: InputDecoration( //Personalizar TextField
+            contentPadding:const EdgeInsets.symmetric(horizontal: 20), //padding solo derecha e izquierda
+            enabledBorder: InputBorder.none,//Sin borde
+            focusedBorder: InputBorder.none,//Sin borde en activo
+            hintText: hintText,//Sin placeholder-texto de pista
+            suffixIcon: right,//icono a la derecha
             hintStyle: TextStyle(
               color:TColor.secondaryText, 
               fontSize: 16

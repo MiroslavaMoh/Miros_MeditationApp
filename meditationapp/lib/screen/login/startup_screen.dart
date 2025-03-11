@@ -77,6 +77,7 @@ class  _StartUpScreenState extends State <StartUpScreen> {
                     ),
                   ),
 
+                  //Conectar el boton para que te envie a login_screen
                   TextButton(onPressed: (){
                     context.push(const LoginScreen());
                   },

@@ -59,7 +59,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/img/
+    - assets/img/ #NO OLVIDAR POSICIONAR  ASSETS AFUERA DE ANDROID 
+
+    
     #- meditationapp/android/assets/img
 
   # An image asset can refer to one or more resolution-specific "variants", see

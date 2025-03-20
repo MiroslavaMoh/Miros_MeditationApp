@@ -21,7 +21,7 @@ class RoundButton extends StatelessWidget {
       padding:const EdgeInsets.symmetric(horizontal:20),
       child: MaterialButton(
         onPressed: onPressed,
-        minWidth: double.maxFinite,
+        minWidth: double.maxFinite, 
         elevation: 0,
         color: type == RoundButtonType.primary ? TColor.primary : TColor.secondary,
         height: 60,

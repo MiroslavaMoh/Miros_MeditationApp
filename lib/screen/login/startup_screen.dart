@@ -4,6 +4,7 @@ import 'package:meditationapp/common/color_extension.dart';
 import 'package:meditationapp/common_widget/round_button.dart';
 import 'package:meditationapp/screen/login/login_screen.dart';
 import 'package:meditationapp/screen/login/sign_up_screen.dart';
+import 'package:meditationapp/screen/home/welcome_screen.dart';
 //meditationapp\lib\screen\login\login_screen.dart
 
 //Página de inicio
@@ -63,6 +64,7 @@ class  _StartUpScreenState extends State <StartUpScreen> {
             RoundButton( //BTN de Common wodgets, recordar importar archivo round_button.dart
               title:"Registrarme",
               onPressed:(){
+                //context.push(const WelcomeScreen());
                 context.push(const SignUpScreen());
               }
             ),

@@ -1,8 +1,9 @@
-import 'dart:math';
+//import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart'; //Importar libreria para masonary
-import 'package:meditationapp/common/color_extension.dart'; 
+import 'package:meditationapp/common/color_extension.dart';
+import 'package:meditationapp/screen/home/reminders_screen.dart'; 
 
 
 class ChooseTopicScreen extends StatefulWidget {
@@ -153,48 +154,56 @@ class _ChooseTopicScreenState extends State<ChooseTopicScreen> {
                     : context.width * 0.45;
 
                   var cObj = dataArr[index] as Map? ?? {};//Tomar datosde array
-                  return Container(
-                    height: height,
-                    alignment: Alignment.center,
-                    margin: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      color: HexColor.formHex(cObj["color"]), //Usar funcion de convertor hex a ARGB
-                      borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Stack(
-                        alignment: Alignment.topCenter,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.only(topLeft:Radius.circular(10),topRight: Radius.circular(10)),
-                            child: Image.asset (cObj["image"], width:double.maxFinite, fit:BoxFit.fitWidth)
-                            ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text( 
-                                        cObj["title"], maxLines: 2,style: TextStyle(
-                                        color: HexColor.formHex(cObj["text_color"]),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700,
-                                      
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    onTap: (){
+                      context.push(const RemindersScreen());
+                    },
+
+
+                    child: Container(
+                      height: height,
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: HexColor.formHex(cObj["color"]), //Usar funcion de convertor hex a ARGB
+                        borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(topLeft:Radius.circular(10),topRight: Radius.circular(10)),
+                              child: Image.asset (cObj["image"], width:double.maxFinite, fit:BoxFit.fitWidth)
+                              ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(15),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text( 
+                                          cObj["title"], maxLines: 2,style: TextStyle(
+                                          color: HexColor.formHex(cObj["text_color"]),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700,
+                                        
+                                        ),
+                                        ),
                                       ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    );
+                  );
               },
             ), 
           

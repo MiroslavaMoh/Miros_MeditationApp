@@ -3,21 +3,25 @@ import 'package:flutter/services.dart';
 import 'package:meditationapp/common/color_extension.dart';
 import 'package:meditationapp/common_widget/round_button.dart';
 import 'package:meditationapp/common_widget/round_text_field.dart';
-//import 'package:meditationapp/screen/login/startup_screen.dart';
+import 'package:meditationapp/screen/login/sign_up_screen.dart';
+import 'package:meditationapp/screen/home/choose_topic_screen.dart';
 
 //Página de inicio
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen ({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen ({super.key});
 
   @override
-  State <SignUpScreen> createState() =>  _SignUpScreenState();
+  State <LoginScreen> createState() =>  _LoginScreenState();
 }
 
-class  _SignUpScreenState extends State <SignUpScreen> {
+class  _LoginScreenState extends State <LoginScreen> {
 
-  bool isTrue = false; //Checkbox de privadidad falso por default
-
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +64,7 @@ class  _SignUpScreenState extends State <SignUpScreen> {
 
                         const SizedBox(height:25,),
 
-                        Text("Crea tu cuenta",
+                        Text("Bienvenido de regreso",
                           style: TextStyle( 
                             color:TColor.primaryText,
                             fontSize:28, 
@@ -162,62 +166,74 @@ class  _SignUpScreenState extends State <SignUpScreen> {
                       ),
 
                 const SizedBox(height:35),
-                RoundTextField(hintText:"Nombre de usuario"),
-                const SizedBox(height:35),
                 RoundTextField(hintText:"Correo electronico"),
                 const SizedBox(height:20),
                 RoundTextField(hintText:"Contraseña",obscureText: true,),
                 const SizedBox(height:20),
 
-                Padding(
-                   padding:const EdgeInsets.symmetric(horizontal:20),
-                  child: Row(
-                      children: [
-                        Text(
-                          "He leido el",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: TColor.secondaryText,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            ),
-                          ),
-
-                         Text(
-                          " aviso de privacidad",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: TColor.primary,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        const Spacer(),
-                        IconButton(onPressed: (){
-                          setState((){
-                            isTrue =!isTrue;
-                          });
-                        },
-                        icon: Icon(
-                        isTrue
-                            ? Icons.check_box
-                            : Icons.check_box_outline_blank_rounded,
-                        color: isTrue ? TColor.primary : TColor.secondaryText,
-                        ),
-                        ),
-                      ],                   
-                   ),
-                ),
-                
-                const SizedBox(height:20),
 
                 //BTN-Registrarme morado
-                
                 RoundButton( //BTN de Common wodgets, recordar importar archivo round_button.dart
-                  title:"Registrarme",
-                  onPressed:(){}
+                  title:"Iniciar Sesión",
+                  onPressed:(){
+                    context.push(const ChooseTopicScreen());
+                  }
                 ),
 
+                //Texto de Iniciar sesión, dos colores 2 elementos
+                 
+                    TextButton(
+                    onPressed: () {
+                      
+                    },
+                    child: Text(
+                      "¿Olvidaste tu contraseña?",
+                      style: TextStyle(
+                        color: TColor.primaryText,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                      
+                      
+
+                      const Spacer(),
+                          
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Crear nueva cuenta",
+                          textAlign: TextAlign.center,
+                          style: TextStyle( 
+                            color:TColor.secondaryText,
+                            fontSize:14, 
+                            fontWeight: FontWeight.w600,
+                            ),
+                          ),
+
+                          //Conectar el boton para que te envie a login_screen
+                          TextButton(onPressed: (){
+                            context.push(const SignUpScreen());
+                          },
+
+                          //const Spacer(),
+
+                          child: Text(
+                            "Registrate",
+                            style: TextStyle( 
+                            color:TColor.primary,
+                            fontSize:14, 
+                            fontWeight: FontWeight.w600,
+                            ),
+                          ),
+
+                          ),
+                        ],
+                      ),
+
+                    
                 const Spacer(),
               ],
           ),

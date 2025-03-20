@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:meditationapp/common/color_extension.dart';
 import 'package:meditationapp/common_widget/round_button.dart';
 import 'package:meditationapp/screen/login/login_screen.dart';
+import 'package:meditationapp/screen/login/sign_up_screen.dart';
 //meditationapp\lib\screen\login\login_screen.dart
 
 //Página de inicio
@@ -61,7 +62,9 @@ class  _StartUpScreenState extends State <StartUpScreen> {
             //BTN-Registrarme morado
             RoundButton( //BTN de Common wodgets, recordar importar archivo round_button.dart
               title:"Registrarme",
-              onPressed:(){}
+              onPressed:(){
+                context.push(const SignUpScreen());
+              }
             ),
 
             //Texto de Iniciar sesión, dos colores 2 elementos

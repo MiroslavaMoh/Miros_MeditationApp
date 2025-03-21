@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meditationapp/common/color_extension.dart';
 import 'package:meditationapp/common_widget/round_button.dart';
 import 'package:meditationapp/common_widget/circular_button.dart';
+import 'package:meditationapp/screen/home/home_screen.dart';
 
 class RemindersScreen extends StatefulWidget {
   const RemindersScreen({super.key});
@@ -69,10 +70,11 @@ List dayArr =[
                         borderRadius: BorderRadius.circular(20),
 
                       ),
+                      //Función de hora importado de cupertino.dart
                       child: CupertinoDatePicker(
-                          mode: CupertinoDatePickerMode.time ,
-                          onDateTimeChanged: (DateTime newDate){
-                        }, use24hFormat: false, minuteInterval: 1,
+                          mode: CupertinoDatePickerMode.time ,//Modo de visualización
+                          onDateTimeChanged: (DateTime newDate){//Variable 
+                        }, use24hFormat: false, minuteInterval: 1, //Formato de horas y saltos de pims
                       ),
                     ),
 
@@ -118,13 +120,13 @@ List dayArr =[
                 ),
               ),
               RoundButton(title: "Guardar", onPressed: (){
-                
+                context.push(const HomeScreen());
               }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(onPressed: (){
-
+                    context.pop(); //regresar a pantalla anterior
                   }, child: Text(
                       "No, gracias",
                       style: TextStyle(

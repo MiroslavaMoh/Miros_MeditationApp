@@ -1,37 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:meditationapp/common/color_extension.dart';
-//import 'package:meditationapp/screen/home/course_detail_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  List rArr = [
-    {
-      "image": "assets/img/r1.png",
-      "title": "Enfoque",
-      "subtitle": "Meditación . 3min",
-    },
-    {
-      "image": "assets/img/r2.png",
-      "title": "Felicidad",
-      "subtitle": "Meditación . 3 min",
-    },
-    {
-      "image": "assets/img/r1.png",
-      "title": "Enfoque",
-      "subtitle": "Meditación . 3 min",
-    },
-    {
-      "image": "assets/img/r2.png",
-      "title": "Felicidad",
-      "subtitle": "Meditación . 3 min",
-    },
-  ];
+class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -42,30 +21,20 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/img/logo_black.png",
-                      width: context.width * 0.5,
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 35,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Buenos días, Miros",
+                    Image.asset(
+                      "assets/img/user.png",
+                      width: 100,
+                      height: 100,
+                    ),
+                    Text( 
+                      "Tu perfil",
                       style: TextStyle(
                         color: TColor.primaryText,
-                        fontSize: 24,
+                        fontSize: 28,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -73,10 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 8,
                     ),
                     Text(
-                      "Le deseamos un día fantastico",
+                      "Miroslava Moheno",
                       style: TextStyle(
                         color: TColor.secondaryText,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                     const SizedBox(
@@ -94,32 +63,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(15),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Color(0xff8E97FD),
+                                  color: Color(0xffd7d5d5),
                                   borderRadius: BorderRadius.circular(15)),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Image.asset(
-                                        "assets/img/h1.png",
-                                        width: 80,
-                                        height: 80,
-                                      ),
-                                    ],
+                                    
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 15),
+                                        horizontal: 15, vertical: 20),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Básicos",
+                                          "Correo",
                                           style: TextStyle(
-                                            color: TColor.tertiary,
+                                            color: TColor.primaryText,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -128,9 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           height: 8,
                                         ),
                                         Text(
-                                          "Curso",
+                                          "miroslavamoh252***",
                                           style: TextStyle(
-                                            color: TColor.tertiary,
+                                            color: TColor.primaryText,
                                             fontSize: 11,
                                           ),
                                         ),
@@ -144,9 +107,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              "3 min",
+                                              "Activo",
                                               style: TextStyle(
-                                                color: TColor.tertiary,
+                                                color: TColor.primaryText,
                                                 fontSize: 11,
                                               ),
                                             ),
@@ -154,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               onTap: () {},
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                    color: TColor.tertiary,
+                                                    color: TColor.primaryText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             20)),
@@ -163,9 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         vertical: 8,
                                                         horizontal: 15),
                                                 child: Text(
-                                                  "Inicio",
+                                                  "Editar",
                                                   style: TextStyle(
-                                                    color: TColor.primaryText,
+                                                    color: TColor.tertiary,
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -174,9 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             )
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 15,
-                                        )
+                                        
                                       ],
                                     ),
                                   )
@@ -201,30 +162,21 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(15),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Color(0xffFFC97E),
+                                  color: Color(0xffd7d5d5),
                                   borderRadius: BorderRadius.circular(15)),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Image.asset(
-                                        "assets/img/h2.png",
-                                        width: 80,
-                                        height: 80,
-                                      ),
-                                    ],
-                                  ),
+                                  
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 15),
+                                        horizontal: 15, vertical: 20),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Relajación",
+                                          "Teléfono",
                                           style: TextStyle(
                                             color: TColor.primaryText,
                                             fontSize: 18,
@@ -235,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           height: 8,
                                         ),
                                         Text(
-                                          "Música",
+                                          "9381025***",
                                           style: TextStyle(
                                             color: TColor.primaryText,
                                             fontSize: 11,
@@ -251,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              "4 min",
+                                              "Sin confirmar",
                                               style: TextStyle(
                                                 color: TColor.primaryText,
                                                 fontSize: 11,
@@ -270,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         vertical: 8,
                                                         horizontal: 15),
                                                 child: Text(
-                                                  "Iniciar",
+                                                  "Editar",
                                                   style: TextStyle(
                                                     color: TColor.tertiary,
                                                     fontSize: 12,
@@ -281,9 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             )
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 15,
-                                        )
+                                        
                                       ],
                                     ),
                                   )
@@ -291,7 +241,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                        ))
+                        )
+                        )
                       ],
                     ),
 
@@ -325,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Pensamiento diario",
+                                        "Subcribete a nuestro newsletter",
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 18,
@@ -336,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         height: 8,
                                       ),
                                       Text(
-                                        "Meditación - 5 min",
+                                        "Obten noticias de la app",
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 11,
@@ -345,14 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {},
-                                  child: Image.asset(
-                                    "assets/img/play.png",
-                                    width: 40,
-                                    height: 40,
-                                  ),
-                                )
+                                
                               ],
                             ),
                           )
@@ -364,61 +308,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
 
                     //Nueva sección deslizable con fichas hechas a partir de la lista de aribba
-                    Text(
-                      "Tambíen te podria interesar",
-                      style: TextStyle(
-                        color: TColor.primaryText,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                    
                   ],
                 ),
               ),
-              SizedBox(
-                height: context.width * 0.35 * 0.7 + 45 + 40,
-                child: ListView.separated( 
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
-                    scrollDirection: Axis.horizontal, //Deslizar horizontalmente
-                    itemBuilder: (context, index) {
-                      var rObj = rArr[index];//Lista de arriba
-                      return SizedBox(
-                        width: context.width * 0.35,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              rObj["image"],
-                              width: context.width * 0.35,
-                              height: context.width * 0.35 * 0.7,
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              rObj["title"],
-                              style: TextStyle(
-                                color: TColor.primaryText,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              rObj["subtitle"],
-                              style: TextStyle(
-                                  color: TColor.primaryText, fontSize: 10),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) => const SizedBox(width: 20,), //Separador lista 
-                    itemCount: rArr.length),
-              )
+              
             ],
           ),
         ),

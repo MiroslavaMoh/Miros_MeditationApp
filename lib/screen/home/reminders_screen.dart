@@ -4,6 +4,7 @@ import 'package:meditationapp/common/color_extension.dart';
 import 'package:meditationapp/common_widget/round_button.dart';
 import 'package:meditationapp/common_widget/circular_button.dart';
 import 'package:meditationapp/screen/home/home_screen.dart';
+import 'package:meditationapp/screen/main_tabview/main_tab_view_screen.dart';
 
 class RemindersScreen extends StatefulWidget {
   const RemindersScreen({super.key});
@@ -120,7 +121,7 @@ List dayArr =[
                 ),
               ),
               RoundButton(title: "Guardar", onPressed: (){
-                context.push(const HomeScreen());
+                context.push(const MainTabViewScreen());
               }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

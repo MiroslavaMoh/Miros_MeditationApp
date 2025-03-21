@@ -1,15 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:meditationapp/common/color_extension.dart';
-//import 'package:meditationapp/screen/home/course_detail_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class MusicScreen extends StatefulWidget {
+  const MusicScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MusicScreen> createState() => _MusicScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MusicScreenState extends State<MusicScreen> {
   List rArr = [
     {
       "image": "assets/img/r1.png",
@@ -42,30 +43,15 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/img/logo_black.png",
-                      width: context.width * 0.5,
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 35,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Buenos días, Miros",
+                      "Música inspiradora",
                       style: TextStyle(
                         color: TColor.primaryText,
-                        fontSize: 24,
+                        fontSize: 28,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -73,10 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 8,
                     ),
                     Text(
-                      "Le deseamos un día fantastico",
+                      "llena tu alma y nutre tu espiritu",
                       style: TextStyle(
                         color: TColor.secondaryText,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                     const SizedBox(
